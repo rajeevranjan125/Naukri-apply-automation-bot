@@ -1,6 +1,7 @@
 package com.naukri.apply.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import lombok.Setter;
 @Table(name = "question_entity")
 @Getter
 @Setter
+@Builder
 public class QuestionEntity {
 
     @Id
@@ -17,7 +19,7 @@ public class QuestionEntity {
     @Column(unique = true, length = 1000)
     private String question;
 
-    private Boolean answered = false;
+    private Boolean answered;
 
     private String answer;
 }
